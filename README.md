@@ -112,11 +112,7 @@ Generated training samples of good and bad links from given directed graph and f
 </body>
 
 
-
-
-
 <hr width="100%" size="2">
-<br>
 
 <h2>Conclusion</h2>
 

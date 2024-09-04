@@ -118,17 +118,8 @@ Generated training samples of good and bad links from given directed graph and f
 <hr width="100%" size="2">
 <br>
 
-<div align="center">
-  <img height="400" src="https://github.com/shreyjain99/TagGen-Automated-Tagging-for-Stack-Overflow-Questions/blob/main/src%20files/frequent%20tags.png"/>
-</div>
+<h2>Conclusion</h2>
 
-<p>
-<strong>Future Scope :</strong>
-</p>
-<ol>
-<li>Use bag of words upto 4 grams and compute the micro f1 score with Logistic regression(OnevsRest) </li>
-<li>Perform hyperparameter tuning on alpha (or lambda) for Logistic regression to improve the performance using GridSearch</li>
-<li>Try OneVsRestClassifier with Linear-SVM (SGDClassifier with loss-hinge)</li>
-</ol>
+<p>Understanding graph structures and feature engineering was crucial for this case study. The Random Forest model found <strong>"follows_back"</strong> as the most important feature, followed by <strong>"weight_f2"</strong> and <strong>"shortest_path."</strong> However, XGBoost delivered the best results, despite taking longer to train. In XGBoost, <strong>"follows_back"</strong> was also the top feature, followed by <strong>"cosine_follower"</strong> and <strong>"weight_f1."</strong> This highlights the importance of effective feature selection in graph-based machine learning tasks.</p>
 
 <hr width="100%" size="2">

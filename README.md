@@ -1,7 +1,7 @@
 <h2 align= "center"><em>Facebook Friend Recommendation Using Graph Mining</em></h2>
 
 <div align="center">
-  <img height="400" src="https://github.com/shreyjain99/TagGen-Automated-Tagging-for-Stack-Overflow-Questions/blob/main/src%20files/pic1.jpg"/>
+  <img height="400" src="https://github.com/shreyjain99/Facebook-Friend-Recommendation-Using-Graph-Mining/blob/main/src%20files/cover%20image.png"/>
 </div>
 
 <hr width="100%" size="2">

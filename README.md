@@ -38,9 +38,7 @@
 <br>
 </p>
 <p>Taken data from facebook's recruting challenge on kaggle https://www.kaggle.com/c/FacebookRecruiting
-data contains two columns source and destination eac edge in graph - Data columns (total 2 columns):
-- source_node int64
-- destination_node int64</p>
+data contains two columns source and destination eac edge in graph - Data columns (total 2 columns): source_node int64 and destination_node int64 </p>
 
 <br>
 
@@ -67,49 +65,86 @@ Generated training samples of good and bad links from given directed graph and f
 
 <br>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #dddddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
 <body>
 
-  <h3>Flow of Project : </h3>
-  
-  <br>
+<h2>Case Study Summary</h2>
 
-  <h3 align= "center"><strong>Data Loading</strong></h3>
+<p>In this project, the dataset provided consisted of directed graph data with approximately 1.86 million nodes and 9.43 million edges. The data, obtained from Kaggle's Facebook Recruiting competition, included only connected nodes, though the theoretical number of possible edges is in the order of 10<sup>12</sup>.</p>
 
-  <div align= "center">|</div>
-  <div align= "center">|</div>
-  <div align= "center">\/</div>
+<p>During exploratory data analysis (EDA), it was found that 90% of users had fewer than 12 followers, highlighting the dataset's sparsity. The dataset was highly imbalanced, containing only one classification label, so a random sample of negative examples (y = 0, where the link is not present) was created to balance the training and test datasets.</p>
 
-  <h3 align= "center"><strong>Analysis of tags</strong></h3>
-  <p align= "center"><em> - Total number of unique tags </em></p>
-  <p align= "center"><em> - Number of times a tag appeared </em></p>
-  <p align= "center"><em> - Tags Per Question </em></p>
-  <p align= "center"><em> - Most Frequent Tags </em></p>
-  <p align= "center"><em> - The top 20 tags </em></p>
+<p>Feature engineering was a critical part of the project, where various types of features were extracted, including:</p>
 
-  <div align= "center">|</div>
-  <div align= "center">|</div>
-  <div align= "center">\/</div>
+<ul>
+    <li><strong>Similarity Measures</strong> (e.g., Adar index)</li>
+    <li><strong>Ranking Measures</strong> (e.g., PageRank, Katz Centrality, HITS Score)</li>
+    <li><strong>Graph Features</strong> (e.g., Connected Components, Shortest Path)</li>
+    <li><strong>Weight Features</strong></li>
+    <li><strong>SVD Features</strong> using the adjacency matrix (with n_components = 6)</li>
+</ul>
 
-  <h3 align= "center">Data Preprocessing (Natural Language Processing)</h3>
-  <p align= "center"><em> - Separated out code-snippets from Body </em></p>
-  <p align= "center"><em> - Removed Special characters from Question title and description </em></p>
-  <p align= "center"><em> - Removed stop words (Except 'C') </em></p>
-  <p align= "center"><em> - Converted all the characters into small letters </em></p>
-  <p align= "center"><em> - Used SnowballStemmer to stem the words </em></p>
+<p>Two models, Random Forest and XGBoost, were trained on the extracted features. While both models were used for the prediction task, XGBoost took the most time to run due to its complexity and the size of the dataset.</p>
 
-  <div align= "center">|</div>
-  <div align= "center">|</div>
-  <div align= "center">\/</div>
+<h3>Model Performance:</h3>
 
-  <h3 align= "center">Machine Learning Models</h3>
-  <p align= "center"><em> - Converted tags for multilabel problems </em></p>
-  <p align= "center"><em>- Splited the data into test and train (80:20)  </em></p>
-  <p align= "center"><em> - Featurized data (TFIDF FEATURES) </em></p>
-  <p align= "center"><em> - Applyied Logistic Regression with OneVsRest Classifier</em></p>
+<table>
+    <tr>
+        <th>Model</th>
+        <th>n_estimators</th>
+        <th>max_depth</th>
+        <th>Train f1-Score</th>
+        <th>Test f1-Score</th>
+    </tr>
+    <tr>
+        <td>Random Forest</td>
+        <td>72</td>
+        <td>14</td>
+        <td>0.962</td>
+        <td>0.926</td>
+    </tr>
+    <tr>
+        <td>XGBoost</td>
+        <td>76</td>
+        <td>14</td>
+        <td>0.996</td>
+        <td>0.927</td>
+    </tr>
+</table>
 
+<p>This case study showcases the importance of feature engineering in graph-based machine learning tasks, particularly when dealing with imbalanced datasets and large-scale data. The models performed well, with XGBoost achieving a slightly higher train f1-score but similar test f1-score compared to Random Forest.</p>
 
-  
 </body>
+
+
+
+
 
 <hr width="100%" size="2">
 <br>

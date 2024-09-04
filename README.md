@@ -114,7 +114,7 @@ Generated training samples of good and bad links from given directed graph and f
 
 <hr width="100%" size="2">
 
-<h2>Conclusion</h2>
+<h2>Observations</h2>
 
 <p>Understanding graph structures and feature engineering was crucial for this case study. The Random Forest model found <strong>"follows_back"</strong> as the most important feature, followed by <strong>"weight_f2"</strong> and <strong>"shortest_path."</strong> However, XGBoost delivered the best results, despite taking longer to train. In XGBoost, <strong>"follows_back"</strong> was also the top feature, followed by <strong>"cosine_follower"</strong> and <strong>"weight_f1."</strong> This highlights the importance of effective feature selection in graph-based machine learning tasks.</p>
 

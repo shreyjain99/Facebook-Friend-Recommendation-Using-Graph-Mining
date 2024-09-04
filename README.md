@@ -63,9 +63,6 @@ Generated training samples of good and bad links from given directed graph and f
 
 <hr width="100%" size="2">
 
-<br>
-
-
 <h2>Case Study Summary</h2>
 
 <p>In this project, the dataset provided consisted of directed graph data with approximately 1.86 million nodes and 9.43 million edges. The data, obtained from Kaggle's Facebook Recruiting competition, included only connected nodes, though the theoretical number of possible edges is in the order of 10<sup>12</sup>.</p>

@@ -11,7 +11,7 @@
 <br>
 
 <p>
-<strong>Real World/Business Objective :</strong> Given a directed social graph, have to predict missing links to recommend users
+<strong>Real World/Business Objective :</strong> Given a directed social graph I have to predict missing links to recommend users.
 </p>
 
 <br>
@@ -20,7 +20,7 @@
 <strong>Constraints :</strong>
 </p>
 <ol>
-<li>Probability of prediction is useful to recommend ighest probability links</li>
+<li>Probability of prediction is useful to recommend highest probable links</li>
 <li>No low-latency requirement.</li>
 </ol>
 
